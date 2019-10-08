@@ -10,7 +10,15 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello World")
+        NavigationView {
+            List {
+                ForEach(pages) { page in
+                    NavigationLink(destination: page.destination) {
+                        Text(page.name).font(.subheadline).padding()
+                    }
+                }
+                }.navigationBarTitle(Text("Cocoda by SwiftUI"), displayMode: .large)
+        }
     }
 }
 
